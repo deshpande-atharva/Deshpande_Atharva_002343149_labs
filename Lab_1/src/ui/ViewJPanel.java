@@ -4,17 +4,24 @@
  */
 package ui;
 
+import model.Product;
 /**
  *
  * @author Admin
  */
 public class ViewJPanel extends javax.swing.JPanel {
+    Product product;
 
     /**
      * Creates new form ViewJPanel
+     * @param p
      */
-    public ViewJPanel(product p) {
+    public ViewJPanel(Product p) {
         initComponents();
+        product=p;
+        
+        displayProduct();
+        
     }
 
     /**
@@ -113,4 +120,14 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;
     // End of variables declaration//GEN-END:variables
+
+    private void displayProduct(){
+        txtName.setText(product.getName());
+        txtDescr.setText(product.getDescription());
+        txtAvail.setText(product.getAvailability());
+        txtPrice.setText(product.getPrice());
+    }
+
+
+
 }
